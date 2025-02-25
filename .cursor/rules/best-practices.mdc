@@ -1,0 +1,115 @@
+---
+description: Best practices to implement for the tech stack used
+globs: 
+---
+Before diving into the best practices, please note that you may need to adapt the globs depending on your specific project structure.
+
+---
+name: nextjs-best-practices.mdc
+description: Best practices for Next.js applications and routing
+globs: **/*.{ts,tsx}
+---
+
+- Use the App Router for better performance and simpler data fetching
+- Implement proper error boundaries to handle runtime errors gracefully
+- Utilize Next.js built-in optimizations like code splitting and image optimization
+- Use `getStaticProps` and `getServerSideProps` appropriately for data fetching
+
+---
+name: react-best-practices.mdc
+description: Best practices for React component development
+globs: **/*.{tsx,jsx}
+---
+
+- Use functional components with hooks instead of class components
+- Implement proper state management using Context API or external libraries
+- Utilize memoization techniques like `useMemo` and `useCallback` for performance
+- Follow the single responsibility principle for components
+
+---
+name: typescript-best-practices.mdc
+description: TypeScript coding standards and type safety guidelines
+globs: **/*.{ts,tsx}
+---
+
+- Enable strict mode in your `tsconfig.json` for better type checking
+- Use interfaces for object shapes and types for unions and intersections
+- Leverage type inference where possible to reduce type annotations
+- Use generics for reusable components and functions
+
+---
+name: tailwindcss-best-practices.mdc
+description: Best practices for using Tailwind CSS
+globs: **/*.{tsx,jsx,css}
+---
+
+- Use utility classes directly in your JSX for faster development
+- Create custom components for frequently used class combinations
+- Utilize the `@apply` directive in custom CSS to maintain consistency
+- Keep your `tailwind.config.js` organized and use plugins judiciously
+
+---
+name: radix-ui-best-practices.mdc
+description: Best practices for using Radix UI components
+globs: **/*.{tsx,jsx}
+---
+
+- Use Radix primitives as building blocks for custom components
+- Follow Radix's accessibility guidelines for all components
+- Customize Radix components using the `asChild` prop for better composition
+- Utilize Radix's state management hooks for complex interactions
+
+---
+name: react-hook-form-best-practices.mdc
+description: Best practices for form handling with React Hook Form
+globs: **/*.{tsx,jsx}
+---
+
+- Use the `useForm` hook with TypeScript for better type safety
+- Implement validation using Zod or Yup for complex form schemas
+- Utilize the `Controller` component for controlled inputs
+- Leverage the `watch` function for real-time form state updates
+
+---
+name: zod-best-practices.mdc
+description: Best practices for using Zod for schema validation
+globs: **/*.{ts,tsx}
+---
+
+- Define schemas at the top level of your modules for reusability
+- Use `z.infer` to generate types from your schemas automatically
+- Implement custom validation logic using `z.refine` for complex cases
+- Utilize Zod's built-in transformations for data normalization
+
+---
+name: framer-motion-best-practices.mdc
+description: Best practices for animations with Framer Motion
+globs: **/*.{tsx,jsx}
+---
+
+- Use `animate` and `initial` props for simple animations
+- Implement complex animations using `useAnimation` hook
+- Optimize performance by using `layoutId` for shared layout animations
+- Leverage variants for reusable animation definitions
+
+---
+name: supabase-best-practices.mdc
+description: Best practices for using Supabase in your application
+globs: **/*.{ts,tsx}
+---
+
+- Use Supabase's real-time capabilities for live updates
+- Implement proper error handling and retries for network requests
+- Utilize Supabase's authentication features for user management
+- Optimize queries using Supabase's built-in filtering and sorting
+
+---
+name: clerk-best-practices.mdc
+description: Best practices for user authentication with Clerk
+globs: **/*.{ts,tsx}
+---
+
+- Use Clerk's pre-built UI components for authentication flows
+- Implement proper session management using Clerk's hooks
+- Customize Clerk's appearance using the `appearance` prop
+- Utilize Clerk's organization features for multi-tenant applications

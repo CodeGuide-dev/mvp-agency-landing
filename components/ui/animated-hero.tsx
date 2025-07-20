@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { MoveRight, PhoneCall } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { MoveRight } from 'lucide-react'
+import { Button } from './button'
 import Image from 'next/image'
 
 function Hero() {
@@ -69,8 +69,10 @@ function Hero() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4">
-              Get Started <MoveRight className="h-4 w-4" />
+            <Button size="lg" className="gap-4" asChild>
+              <a href="/waitlist">
+                Join Waitlist <MoveRight className="h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>

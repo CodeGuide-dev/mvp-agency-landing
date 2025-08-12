@@ -1,0 +1,107 @@
+---
+description: Apply these rules when making changes to the project
+globs:
+alwaysApply: true
+---
+
+Update this rule if user requested changes to the project requirement, etc.
+## Project Overview
+
+*   **Type:** cursor_project_rules
+*   **Description:** This repository, `mvp-agency-landing`, appears to be a minimal viable product (MVP) for an agency's landing page. Its primary purpose is to showcase information and potentially offer services, leveraging modern web technologies for a responsive and interactive user experience.
+*   **Primary Goal:** Showcase agency information and offer services through a responsive, interactive landing page using modern web technologies.
+
+## Project Structure
+
+### Framework-Specific Routing
+
+*   **Directory Rules:**
+    *   Next.js 13+ (App Router): `app/[route]/page.tsx` conventions
+    *   Example 1: "Next.js 14 (App Router)" → `app/[route]/page.tsx` conventions
+    *   Example 2: "Next.js (Pages Router)" → `pages/[route].tsx` pattern
+    *   Example 3: "React Router 6" → `src/routes/` with `createBrowserRouter`
+
+### Core Directories
+
+*   **Versioned Structure:**
+    *   `app/`: Next.js 13+ App Router entrypoint with nested routes and layouts
+    *   `components/ui`: Reusable UI components (accordions, buttons, cards) for scalable design system
+    *   `components/providers`: Context providers (ClerkClientProvider)
+    *   `fonts`: Custom typography assets (GeistMonoVF.woff, GeistVF.woff)
+    *   `app/globals.css`: Global styles and Tailwind CSS imports
+    *   `.cursor/`: Cursor AI assistant configuration and rules
+
+### Key Files
+
+*   **Stack-Versioned Patterns:**
+    *   `app/layout.tsx`: Next.js 13+ root layout for wrapping global providers and metadata
+    *   `app/page.tsx`: Main landing page component using server and client components
+    *   `components/providers/clerk-client-provider.tsx`: Clerk context initialization
+    *   `components/ui/button.tsx`: Utility-first styled button component (Tailwind CSS)
+    *   `.cursor/rules.mdc`: AI-driven linting and documentation rules
+
+## Tech Stack Rules
+
+*   **Version Enforcement:**
+    *   next@13+: App Router required, no `pages/` directory
+    *   tailwindcss@^3.0: Purge unused styles in production, configure theme in `tailwind.config.js`
+    *   @clerk/clerk-react@^4.x: Wrap app in `ClerkProvider`, enforce secure session management
+
+## PRD Compliance
+
+*   "Primary purpose is to showcase information and potentially offer services": Enforce SSR/SSG for SEO-critical sections
+
+## App Flow Integration
+
+*   **Stack-Aligned Flow:**
+    *   Next.js 13+ Auth Flow → `app/auth/login/page.tsx` uses server actions for sign-in
+    *   Clerk-protected client portal → `app/dashboard/layout.tsx` wraps content with `ClerkSecureRoute`
+
+## Best Practices
+
+*   Next.js 13+
+    *   Use App Router exclusively, avoid legacy pages/ directory
+    *   Leverage server components for data fetching and reduce client bundle size
+    *   Organize nested layouts for shared UI (headers, footers)
+
+*   Tailwind CSS
+    *   Purge unused classes via `content` paths in config
+    *   Use design tokens in `tailwind.config.js` for colors, spacing
+    *   Apply variants (responsive, hover, focus) for accessible styling
+
+*   Clerk
+    *   Wrap application root in `ClerkProvider` and use `useUser()` hook
+    *   Protect routes via server-side session checks in `middleware.ts`
+    *   Handle auth edge cases (session expiry, multi-factor auth)
+
+*   Cursor AI
+    *   Keep `.cursor/rules.mdc` in sync with evolving coding standards
+    *   Review AI suggestions and mark rules as disabled/enabled explicitly
+    *   Update documentation snippets in `.cursor` after major refactors
+
+## Rules
+
+*   Derive folder/file patterns directly from techStackDoc versions.
+*   If Next.js 14 App Router: Enforce `app/` directory with nested route folders.
+*   If Pages Router: Use `pages/*.tsx` flat structure.
+*   Mirror this logic for React Router, SvelteKit, etc.
+*   Never mix version patterns (e.g., no `pages/` in App Router projects).
+
+## Rules Metrics
+
+Before starting the project development, create a metrics file in the root of the project called
+
+`cursor_metrics.md`.
+
+### Instructions:
+
+*   Each time a cursor rule is used as context, update `cursor_metrics.md`.
+*   Use the following format for `cursor_metrics.md:` Rules Metrics (h1)
+
+Usage (h2)
+
+The number of times rules is used as context
+
+*   rule-name.mdc: 5
+*   another-rule.mdc: 2
+*   ...other rules

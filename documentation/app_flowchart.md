@@ -1,0 +1,12 @@
+flowchart TD
+  layout[layout tsx] --> clerk[ClerkClientProvider]
+  clerk --> page[page tsx]
+  page --> services[Services Section]
+  page --> portfolio[Portfolio Section]
+  page --> contact[Contact Section]
+  page --> cta[CTA Section]
+  page --> ui[UI Component Library]
+  ui --> accordion[Accordion Component]
+  ui --> button[Button Component]
+  ui --> card[Card Component]
+  ui --> other[Other UI Components]

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -14,8 +15,8 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'CodeGuide Starter Pro',
-  description: 'Starter kit from codeguide.dev',
+  title: 'AgencyPro - Digital Solutions Agency',
+  description: 'We create exceptional web applications and digital experiences that drive growth.',
 }
 
 export default function RootLayout({
@@ -25,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
+        <Toaster richColors position="top-center" />
+      </body>
     </html>
   )
 }
